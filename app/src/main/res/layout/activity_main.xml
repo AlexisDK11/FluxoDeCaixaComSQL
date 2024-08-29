@@ -12,17 +12,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Tipo:"
+        android:text="@string/tipo"
+        android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spTipo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="16dp"
         android:spinnerMode="dropdown"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvTipo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -34,7 +36,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Detalhe:"
+        android:text="@string/detalhe"
+        android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/tvTipo" />
 
@@ -47,19 +50,40 @@
 
     <Spinner
         android:id="@+id/spDetalhe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
         android:layout_marginStart="2dp"
+        android:layout_marginEnd="16dp"
+        android:enabled="false"
+        android:textSize="24sp"
+        android:contextClickable="true"
         app:layout_constraintBottom_toBottomOf="@+id/tvDetalhe"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvDetalhe"
-        app:layout_constraintTop_toTopOf="@+id/tvDetalhe" />
+        app:layout_constraintTop_toTopOf="@+id/tvDetalhe"
+        android:visibility="visible"/>
+
+    <View
+        android:id="@+id/overlay"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDetalhe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvDetalhe"
+        app:layout_constraintTop_toTopOf="@+id/tvDetalhe"/>
 
     <TextView
         android:id="@+id/tvValor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Valor:"
+        android:text="@string/valor"
+        android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/tvDetalhe" />
 
@@ -69,17 +93,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:ems="10"
+        android:text=""
+        android:textSize="24sp"
+        android:importantForAutofill="no"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="@+id/tvValor"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/tvValor" />
+        app:layout_constraintTop_toTopOf="@+id/tvValor"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/tvData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Data:"
+        android:textSize="24sp"
+        android:text="@string/data"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/tvValor" />
 
@@ -87,8 +116,9 @@
         android:id="@+id/btData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:text="Selecionar a data"
+        android:layout_marginStart="4dp"
+        android:text="@string/selecionar_a_data"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvData"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/tvData" />
@@ -108,8 +138,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:textSize="20sp"
             android:layout_weight="1"
-            android:text="Salvar" />
+            android:text="@string/salvar"
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/btLimpar"
@@ -117,7 +149,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:text="Limpar" />
+            android:textSize="20sp"
+            android:text="@string/limpar"
+            tools:ignore="ButtonStyle" />
     </LinearLayout>
 
     <LinearLayout
@@ -132,13 +166,15 @@
             android:id="@+id/btVerLançamentos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ver Lançamentos" />
+            android:textSize="20sp"
+            android:text="@string/ver_lan_amentos" />
 
         <Button
             android:id="@+id/btSaldo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Saldo" />
+            android:textSize="20sp"
+            android:text="@string/saldo" />
 
     </LinearLayout>
 

@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">Fluxo de Caixa com SQL</string>
+    <string name="valor">Valor:</string>
+    <string name="tipo">Tipo:</string>
+    <string name="detalhe">Detalhe:</string>
+    <string name="data">Data:</string>
+    <string name="selecionar_a_data">Selecionar a data</string>
+    <string name="salvar">Salvar</string>
+    <string name="limpar">Limpar</string>
+    <string name="ver_lan_amentos">Ver Lançamentos</string>
+    <string name="saldo">Saldo</string>
+
+    <string-array name="tipo_array">
+        <item>Selecione...</item>
+        <item>Crédito</item>
+        <item>Débito</item>
+    </string-array>
+
+    <string-array name="debito_array">
+        <item>Selecione...</item>
+        <item>Alimentação</item>
+        <item>Transporte</item>
+        <item>Saúde</item>
+        <item>Moradia</item>
+    </string-array>
+
+    <string-array name="credito_array">
+        <item>Selecione...</item>
+        <item>Salário</item>
+        <item>Extras</item>
+    </string-array>
 </resources>
