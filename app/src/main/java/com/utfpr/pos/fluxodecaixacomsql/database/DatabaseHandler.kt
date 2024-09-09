@@ -19,7 +19,7 @@ class DatabaseHandler (context: Context): SQLiteOpenHelper(context, DATABASE_NAM
 
     companion object {
         private const val DATABASE_NAME = "dbfile.sqlite"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 2
         private const val TABLE_NAME = "receita"
         private const val COD = 0
         private const val TIPO = 1

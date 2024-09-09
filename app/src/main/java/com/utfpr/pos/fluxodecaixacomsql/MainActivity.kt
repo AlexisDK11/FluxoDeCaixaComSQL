@@ -1,19 +1,17 @@
 package com.utfpr.pos.fluxodecaixacomsql
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.database.Cursor
+import android.net.Uri.Builder
 import android.os.Bundle
-import android.view.MotionEvent
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.get
 import com.utfpr.pos.fluxodecaixacomsql.database.DatabaseHandler
 import com.utfpr.pos.fluxodecaixacomsql.databinding.ActivityMainBinding
 import com.utfpr.pos.fluxodecaixacomsql.entity.Receita
@@ -103,6 +101,33 @@ class MainActivity : AppCompatActivity() {
 
     private fun btSaldoOnClickListener() {
 
+        var total : Double = retornaValor()
+
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder.setTitle("Resultado")
+            .setMessage("O valor final é: $total")
+            .setPositiveButton("OK", null)
+            .show()
+    }
+
+    private fun retornaValor(): Double {
+        val cursor : Cursor =  banco.cursorList()
+        var total : Double = 0.0
+
+        if (cursor.moveToFirst()) {
+            do {
+                var valor : Double = cursor.getDouble(cursor.getColumnIndex("valor"))
+                var tipo : String = cursor.getString(cursor.getColumnIndex("tipo"))
+
+                if ("Crédito".equals(tipo)) {
+                    total += valor;
+                } else if ("Débito".equals(tipo)) {
+                    total -= valor;
+                }
+            } while (cursor.moveToNext());
+        }
+
+        return total
     }
 
     private fun btVerLanAmentosOnClickListener() {
